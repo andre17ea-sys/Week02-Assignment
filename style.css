@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+.thumbnails {
+  display: flex;
+}
+
+#displayContainer {
+  position: relative;
+}
