@@ -1,11 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: Arial;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(128, 128, 128);
+  min-height: 100vh;
+}
+
+main {
+  width: 900vw;
+  max-width: 900px;
+  margin-top: 1rem;
 }
 
 .thumbnails {
   display: flex;
+  overflow-x: auto;
+  gap: 8px 0;
+  border-bottom: 1px solid #d85f5f;
+}
+
+#thumbnails img {
+  height: 8vh;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.thumbnails img:focus,
+.thumbnails img.hover {
+  border-color: rgb(0, 217, 255);
+  outline: none;
 }
 
 #displayContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0rem;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
   position: relative;
+}
+
+#displayContainer img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.buttons {
+  top: 1rem;
+}
+
+button {
+  background: rgba(255, 154, 154, 0.863);
+  color: white;
+  border: 2px solid rgba(231, 9, 9, 0.527);
+  border-radius: 100%;
+  width: 80px;
+  height: 60px;
+  margin: 0 99px;
+  cursor: pointer;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .thumbnails {
+    order: 0;
+  }
+  #displayContainer {
+    order: 1;
+  }
+}
+
+@media (max-width: 799px) {
+  .thumbnails {
+    order: 1;
+  }
+  #displayContainer {
+    order: 0;
+  }
 }
